@@ -3090,72 +3090,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 57.15 82.55 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5c4b2a18-b174-4b18-bb5a-80e0f6f7fd8f")
-		(property "Reference" "#PWR01"
-			(at 57.15 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 57.15 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 57.15 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 57.15 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 57.15 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b0f67d18-d1d9-4d04-a195-08ea927da106")
-		)
-		(instances
-			(project ""
-				(path "/1de9aa1d-2e3c-4a1f-9dca-774e21ea52a0"
-					(reference "#PWR01")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 27.94 142.24 90)
 		(unit 1)
@@ -3728,7 +3662,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Seeed Studio XIAO Series Library:XIAO-SAMD21-RP2040-14P-2.54-21X17.8MM (Seeeduino XIAO)"
+		(property "Footprint" "Seeed Studio XIAO Series Library:XIAO-Generic-Thruhole-14P-2.54-21X17.8MM"
 			(at 45.72 55.88 0)
 			(effects
 				(font
