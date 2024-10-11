@@ -14,4 +14,5 @@ These are the KiCad files, they will be updated daily.
 ## Blender
 Any Blender files made will be stored here, these are slightly better versions of my sketches (if I even made one)
 
-YouTube Shorts Recaps - https://youtube.com/playlist?list=PL8pZ9v0F1Ks2gfHrP7J-pUTj4NAnL8gHc&si=MliIfDuidp5TVAae
+## YouTube Shorts Recaps
+https://youtube.com/playlist?list=PL8pZ9v0F1Ks2gfHrP7J-pUTj4NAnL8gHc&si=MliIfDuidp5TVAae
