@@ -12,7 +12,8 @@ These are screenshots from the development process with each design iteration.
 These are the KiCad files, they will be updated daily.
 
 ## Blender
-Any Blender files made will be stored here, these are slightly better versions of my sketches (if I even made one)
+Any Blender files made will be stored here, these are either sketches, renders, or CAD files
+- Here's the tool I used to export from KiCad to Blender: https://github.com/30350n/pcb2blender
 
 ## YouTube Shorts Recaps
 https://youtube.com/playlist?list=PL8pZ9v0F1Ks2gfHrP7J-pUTj4NAnL8gHc&si=MliIfDuidp5TVAae
