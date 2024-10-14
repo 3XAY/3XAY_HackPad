@@ -3786,7 +3786,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "kbd:OLED"
+		(property "Footprint" "KiCad-SSD1306-0.91-OLED-4pin-128x32.pretty-master:SSD1306-0.91-OLED-4pin-128x32"
 			(at 201.93 39.37 0)
 			(effects
 				(font
