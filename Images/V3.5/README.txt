@@ -1,0 +1,1 @@
+The PCB schematic is the same as V3, so are the keymaps and the idea.
