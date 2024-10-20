@@ -1,19 +1,24 @@
 import board #Allows for access to the board's systems
 from digitalio import DigitalInOut, Direction, Pull #Allows for digital I/O access
-import time #Pause
 import adafruit_pcf8547 #I/O expander library
 from adafruit_debouncer import Button #Button presses
-import usb_hid
+import usb_hid #USB Devices
 from adafruit_hid.mouse import Mouse #Mouse clicks / wheel
 from adafruit_hid.keyboard import Keyboard #Keyboard presses
 from adafruit_hid.keycode import Keycode #Key press names
 from adafruit_hid.consumer_control import ConsumerControl #Media presses
 from adafruit_hid.consumer_control_code import ConsumerControlCode #Media press codes
 import rotaryio #For encoder
+import busio #For i2c access
+import adafruit_ssd1306 #Display lib for ssd1306
+
 
 i2c = board.I2C() #i2c object from the SDA/SCL pins
 
 pcf = adafruit_pcf8547.PCF8574(i2c, 0x20) #Save the IO expander as an object with an address of 0x20 (all address pins to ground)
+
+i2cPins = busio.I2C(board.SCL, board.SDA) #Get the I2C pins for OLED
+oled = adafruit_ssd1306.SSD1306_I2C(128, 32, i2cPins) #Creates an OLED object with a 128x32 resolution
 
 #Get pins from PCF
 p6 = pcf.get_pin(6) #Gets a DigitalInOut pin
@@ -89,18 +94,29 @@ while True: #Main loop
     sw5.update()
     sw6.update()
 
+    #OLED refresh
+    oled.fill(0) #Clear screen
+    oled.text("Test text", 0, 0) #Writes "test text" at (0,0)
+    oled.text("Switch 6 state: " + sw6.pressed, 0, 20) #Shows the state of SW6 at (0,20)
+    oled.show() #Update the display
+
     #Switch outputs
     if sw1.pressed:
         kbd.send(Keycode.SPACEBAR) #Play/pause
-    else if sw2.pressed:
+
+    if sw2.pressed:
         kbd.send(Keycode.F) #Fullscreen in Davinci
-    else if sw3.pressed:
+
+    if sw3.pressed:
         kbd.send(Keycode.CTRL, Keycode.S) #Save
-    else if sw4.pressed:
+
+    if sw4.pressed:
         kbd.send(Keycode.M) #Marker in Davinci
-    else if sw5.pressed:
+
+    if sw5.pressed:
         kbd.send(Keycode.CTRL, Keycode.BACKSLASH) #Split clip in Davinci
-    else if sw6.pressed:
+
+    if sw6.pressed:
         kbd.send(Keycode.ALT, Keycode.BACKSLASH) #Join clip in Davinci
 
     #Encoder stuff
@@ -113,12 +129,14 @@ while True: #Main loop
             media.send(ConsumerControlCode.VOLUME_DECREMENT) #Counter-clockwise
         else:
             media.send(ConsumerControlCode.VOLUME_INCREMENT) #Clockwise
-    else if last_pos2 != pos2:
+
+    if last_pos2 != pos2:
         if last_pos1 > pos1:
             media.send(ConsumerControlCode.SCAN_PREVIOUS_TRACK) #Placeholder, supposed to be horizontal scroll
         else:
             media.send(ConsumerControlCode.SCAN_NEXT_TRACK)
-    else if last_pos3 != pos3:
+            
+    if last_pos3 != pos3:
         if last_pos1 > pos1:
             kbd.send(Keycode.CTRL, Keycode.EQUALS)
         else:
