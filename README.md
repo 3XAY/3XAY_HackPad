@@ -1,6 +1,7 @@
 # HackPad
 
 This is currently a work in progress. **THIS MEANS NOTHING IS TESTED, DO NOT ATTEMPT TO USE THIS AS A GUIDE** (as of now)
+[here's the submission link if you want it](https://github.com/hackclub/hackpad/pull/187)
 
 This is my submission for Hack Club's HackPad YSWS (You ship we ship).
 My progress will be throughouly documented here.
